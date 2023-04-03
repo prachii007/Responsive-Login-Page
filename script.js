@@ -1,19 +1,22 @@
-var username = document.getElementById("username").value;
-var password = document.getElementById("password").value;
 
 function validate() {
-    let status = true;
-    var epattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
 
-    if (!epattern.test(username)) {
-        alert("Invalid Email ID!");
-        status = false;
-    }
-    if (password == "") {
-        alert("Password cannot be empty")
-    }
 
-    alert("You have logged in successfully")
-    username == "";
-    password == "";
+    let status = "true";
+
+    if (username === "") {
+        alert("Please enter a valid Email ID!");
+        status = "false";
+    }
+    if (password === "") {
+        alert("Password cannot be empty");
+        status = "false";
+    }
+    if (status === "true") {
+        alert("You have logged in successfully");
+        document.getElementById("username").value = "";
+        document.getElementById("password").value = "";
+    }
 }
