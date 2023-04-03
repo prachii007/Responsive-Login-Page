@@ -2,11 +2,12 @@
 function validate() {
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
+    var epattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 
 
     let status = "true";
 
-    if (username === "") {
+    if (username === "" || !epattern.test(username)) {
         document.getElementById("usernameError").innerText = "Please enter a valid Email ID!";
         status = "false";
     } else {
