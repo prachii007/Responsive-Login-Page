@@ -7,7 +7,7 @@ function validate() {
     let status = "true";
 
     if (username === "") {
-        alert("Please enter a valid Email ID!");
+        document.getElementById("usernameError").innerText = "Please enter a valid Email ID!";
         status = "false";
     }
     if (password === "") {
@@ -15,7 +15,7 @@ function validate() {
         status = "false";
     }
     if (status === "true") {
-        alert("You have logged in successfully");
+        document.getElementById("passwordError").innerText = "You have logged in successfully";
         document.getElementById("username").value = "";
         document.getElementById("password").value = "";
     }
