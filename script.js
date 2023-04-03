@@ -9,14 +9,18 @@ function validate() {
     if (username === "") {
         document.getElementById("usernameError").innerText = "Please enter a valid Email ID!";
         status = "false";
+    } else {
+        document.getElementById("usernameError").innerText = ""
     }
     if (password === "") {
-        alert("Password cannot be empty");
+        document.getElementById("passwordError").innerText = "Password cannot be empty";
         status = "false";
+    } else {
+        document.getElementById("passwordError").innerText = ""
     }
     if (status === "true") {
-        document.getElementById("passwordError").innerText = "You have logged in successfully";
         document.getElementById("username").value = "";
         document.getElementById("password").value = "";
+        alert("You have logged in successfully");
     }
 }
